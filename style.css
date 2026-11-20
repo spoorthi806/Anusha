@@ -1,0 +1,292 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #19002e, #65005b, #ff4d94);
+    color: white;
+    text-align: center;
+}
+
+/* PAGE 1 */
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 30px 15px;
+}
+
+.birthday-card {
+    width: 600px;
+    max-width: 100%;
+    padding: 45px 30px;
+    border: 2px solid #ffd700;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 40px #ff69b4;
+    animation: appear 1.5s ease;
+}
+
+.cake {
+    font-size: 85px;
+    animation: bounce 2s infinite;
+}
+
+.small-title {
+    color: #ffdf80;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin: 20px 0;
+}
+
+h1 {
+    color: #ffe66d;
+    font-size: 40px;
+    margin: 20px 0;
+    text-shadow: 0 0 20px #ff69b4;
+    animation: glow 2s infinite alternate;
+}
+
+h2 {
+    color: #ffb6dc;
+    margin: 15px 0;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+.stars {
+    font-size: 25px;
+    margin: 20px;
+}
+
+.footer {
+    margin-top: 30px;
+    color: #ffd6ed;
+}
+
+/* FLOATING EMOJIS */
+
+.floating {
+    position: fixed;
+    top: 10%;
+    left: 8%;
+    font-size: 50px;
+    animation: float 4s infinite;
+    pointer-events: none;
+}
+
+.two {
+    left: auto;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.three {
+    top: auto;
+    bottom: 10%;
+    animation-delay: 2s;
+}
+
+.four {
+    top: auto;
+    bottom: 10%;
+    left: auto;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff1493, #ffbd35);
+    color: white;
+    padding: 15px 28px;
+    border-radius: 30px;
+    margin: 15px 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.4s;
+    box-shadow: 0 0 15px #ff69b4;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px white;
+}
+
+/* PAGE 2 */
+
+.memory-page {
+    padding: 50px 20px;
+}
+
+.subtitle {
+    font-size: 19px;
+    margin: 20px;
+    color: #ffe1f0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 30px;
+    max-width: 1050px;
+    margin: 45px auto;
+}
+
+.photo {
+    background: white;
+    padding: 12px 12px 20px;
+    border-radius: 12px;
+    color: #85005c;
+    box-shadow: 0 0 25px #ff69b4;
+    transition: 0.4s;
+    transform: rotate(-2deg);
+}
+
+.photo:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.photo:hover {
+    transform: rotate(0deg) scale(1.07);
+}
+
+.photo img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.photo p {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.memory-quote {
+    color: #ffe66d;
+    margin: 35px 0;
+}
+
+.navigation {
+    margin: 30px;
+}
+
+/* PAGE 3 */
+
+.wish-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.wish-card {
+    width: 700px;
+    max-width: 100%;
+    padding: 45px 30px;
+    border: 2px solid gold;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.13);
+    box-shadow: 0 0 40px #ff69b4;
+    animation: appear 2s ease;
+}
+
+.wish-card p {
+    font-size: 19px;
+    line-height: 1.9;
+    margin: 22px 0;
+}
+
+.final-wish {
+    color: #ffe66d;
+    margin-top: 35px;
+}
+
+/* ANIMATIONS */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-40px);
+    }
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff1493;
+    }
+
+    to {
+        text-shadow: 0 0 30px #ffe66d;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .birthday-card,
+    .wish-card {
+        padding: 30px 18px;
+    }
+
+    .description,
+    .wish-card p {
+        font-size: 16px;
+    }
+
+    .floating {
+        font-size: 30px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .photo img {
+        height: 150px;
+    }
+}
